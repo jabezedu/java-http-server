@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Java HTTP Server</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo-group">
+                <img src="/images/logo.svg" alt="Server Logo" class="logo">
+                <span class="brand">NetApps HTTP/1.1</span>
+            </div>
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about.html" class="active">About</a>
+                <a href="/api/info">Server Info</a>
+                <a href="/api/time">Live Time</a>
+                <a href="/health">Health</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container content">
+        <section class="hero">
+            <h1>Architecture & Protocol Compliance</h1>
+            <p class="subtitle">Built entirely without third-party frameworks or JDK HTTP built-ins.</p>
+        </section>
+
+        <section class="card">
+            <h2>Core Features</h2>
+            <ul>
+                <li><strong>Raw Socket Layer:</strong> Non-delegated TCP socket management with connection pooling.</li>
+                <li><strong>Strict HTTP/1.1 Parser:</strong> Hand-crafted stateful parser enforcing RFC 7230 line, header, and body specifications.</li>
+                <li><strong>Conditional Requests:</strong> Evaluates <code>If-Modified-Since</code> and <code>If-None-Match</code> to serve fast <code>304 Not Modified</code> responses.</li>
+                <li><strong>Range Streaming:</strong> Single-range byte slicing serving <code>206 Partial Content</code> with 8 KB chunking.</li>
+                <li><strong>Persistent Connections:</strong> Fully supports Keep-Alive pipelining with request limits and idle timeouts.</li>
+                <li><strong>Security Controls:</strong> Enforces canonical path boundary checks to prevent directory traversal exploits.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 NetApps Networking Suite</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java HTTP Server</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo-group">
+                <img src="/images/logo.svg" alt="Server Logo" class="logo">
+                <span class="brand">NetApps HTTP/1.1</span>
+            </div>
+            <nav class="nav-links">
+                <a href="/" class="active">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/api/info">Server Info</a>
+                <a href="/api/time">Live Time</a>
+                <a href="/health">Health</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container content">
+        <section class="hero">
+            <h1>High-Performance Plain Java 17 HTTP Server</h1>
+            <p class="subtitle">Built entirely with raw standard library ServerSockets, streaming I/O, and custom RFC-compliant HTTP/1.1 parsing.</p>
+        </section>
+
+        <section class="card-grid">
+            <article class="card">
+                <h2>Live Server Time</h2>
+                <p>Asynchronously queries <code>/api/time</code> via JavaScript fetch:</p>
+                <div id="live-time" class="metric-box">Loading...</div>
+                <button id="refresh-time-btn" class="btn">Refresh Time</button>
+            </article>
+
+            <article class="card">
+                <h2>Server Health Status</h2>
+                <p>Endpoint: <code>/health</code></p>
+                <div id="health-box" class="metric-box status-ok">Checking...</div>
+                <button id="check-health-btn" class="btn">Check Health</button>
+            </article>
+
+            <article class="card">
+                <h2>Dynamic API Echo Test</h2>
+                <form id="echo-form">
+                    <label for="echo-input">Message Payload:</label>
+                    <input type="text" id="echo-input" placeholder="Type a message to echo" value="Hello Java Server!">
+                    <button type="submit" class="btn primary">POST to /api/echo</button>
+                </form>
+                <pre id="echo-output" class="console-box">// Echo response will render here</pre>
+            </article>
+
+            <article class="card">
+                <h2>File Upload Test</h2>
+                <p>Sends raw bytes to <code>/upload</code> with custom <code>X-Filename</code>:</p>
+                <form id="upload-form">
+                    <label for="upload-filename">Target Filename:</label>
+                    <input type="text" id="upload-filename" value="sample.txt">
+                    <label for="upload-content">File Text Content:</label>
+                    <textarea id="upload-content" rows="3">Sample uploaded text from browser client.</textarea>
+                    <button type="submit" class="btn secondary">Upload File</button>
+                </form>
+                <div id="upload-status" class="status-msg"></div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 NetApps Networking Suite &bull; Pure Java 17 RFC-Compliant HTTP Engine</p>
+        </div>
+    </footer>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
